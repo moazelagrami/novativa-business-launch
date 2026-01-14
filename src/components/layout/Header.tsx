@@ -4,6 +4,7 @@ import { Menu, X, Download, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
+import novativaLogo from '@/assets/novativa-logo.png';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,18 +44,15 @@ const Header: React.FC = () => {
       <div className="container-custom">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-xl">N</span>
-              </div>
-            </div>
-            <span className={cn(
-              'font-bold text-xl tracking-tight transition-colors',
-              isScrolled ? 'text-foreground' : 'text-primary'
-            )}>
-              Novativa
-            </span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={novativaLogo} 
+              alt="Novativa - Laser Cutting & Engraving" 
+              className={cn(
+                'transition-all duration-300',
+                isScrolled ? 'h-10' : 'h-12'
+              )}
+            />
           </Link>
 
           {/* Desktop Navigation */}
