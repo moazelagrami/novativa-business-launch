@@ -57,10 +57,10 @@ export default {
           light: "hsl(var(--navy-light))",
           dark: "hsl(var(--navy-dark))",
         },
-        orange: {
-          DEFAULT: "hsl(var(--orange))",
-          hover: "hsl(var(--orange-hover))",
-          light: "hsl(var(--orange-light))",
+        pink: {
+          DEFAULT: "hsl(var(--pink))",
+          hover: "hsl(var(--pink-hover))",
+          light: "hsl(var(--pink-light))",
         },
         cream: "hsl(var(--cream))",
         steel: "hsl(var(--steel))",

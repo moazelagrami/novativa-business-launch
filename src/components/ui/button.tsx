@@ -16,8 +16,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Novativa custom variants
-        accent: "bg-accent text-accent-foreground hover:bg-orange-hover shadow-accent",
-        hero: "bg-accent text-accent-foreground hover:bg-orange-hover shadow-accent text-base px-8 py-3 h-auto",
+        accent: "bg-accent text-accent-foreground hover:bg-pink-hover shadow-accent",
+        hero: "bg-accent text-accent-foreground hover:bg-pink-hover shadow-accent text-base px-8 py-3 h-auto",
         heroOutline: "border-2 border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground/10 text-base px-8 py-3 h-auto",
         whatsapp: "bg-[#25D366] text-primary-foreground hover:bg-[#20BD5A] shadow-lg",
         navy: "bg-primary text-primary-foreground hover:bg-navy-light shadow-md",
