@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MessageCircle, ArrowRight, Target, Clock, Palette, DollarSign } from 'lucide-react';
+import { MessageCircle, ArrowRight, Target, Clock, Palette, DollarSign, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import heroImage from '@/assets/hero-laser-cutting.jpg';
-import laserEngraving from '@/assets/laser-engraving.jpg';
-import promotionalProducts from '@/assets/promotional-products.jpg';
+
+// Product images
+import coasters from '@/assets/products/coasters.jpg';
+import giftBox from '@/assets/products/gift-box.jpg';
+import boxesMandala from '@/assets/products/boxes-mandala.jpg';
 
 const Home: React.FC = () => {
   const { t } = useLanguage();
@@ -36,25 +38,24 @@ const Home: React.FC = () => {
 
   const services = [
     {
-      image: heroImage,
+      image: coasters,
       title: t('services.laser.title'),
       description: t('services.laser.desc'),
     },
     {
-      image: laserEngraving,
+      image: giftBox,
       title: t('services.engraving.title'),
       description: t('services.engraving.desc'),
     },
     {
-      image: promotionalProducts,
+      image: boxesMandala,
       title: t('services.promo.title'),
       description: t('services.promo.desc'),
     },
   ];
 
-  const whatsappNumber = '+201234567890';
-  const whatsappMessage = encodeURIComponent('Hello! I would like to inquire about your services.');
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappUrl = 'https://wa.me/201080221415?text=' + encodeURIComponent('Hello! I would like to inquire about your services.');
+  const whatsappPricingUrl = 'https://wa.me/201080221415?text=' + encodeURIComponent('Hello! I would like to request pricing for your services.');
 
   return (
     <Layout>
@@ -64,7 +65,7 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${heroImage})` }}
+            style={{ backgroundImage: `url(${coasters})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
         </div>
@@ -86,10 +87,16 @@ const Home: React.FC = () => {
                 </a>
               </Button>
               <Button variant="heroOutline" asChild>
-                <Link to="/contact">
-                  {t('hero.cta.contact')}
+                <a href={whatsappPricingUrl} target="_blank" rel="noopener noreferrer">
+                  {t('hero.cta.pricing')}
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
+              </Button>
+              <Button variant="heroOutline" asChild>
+                <a href="/catalog.pdf" download>
+                  <Download className="w-5 h-5" />
+                  {t('hero.cta.catalog')}
+                </a>
               </Button>
             </div>
           </div>
@@ -177,6 +184,29 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Trusted By Section - Minimal */}
+      <section className="py-12 bg-background border-y border-border">
+        <div className="container-custom">
+          <p className="text-center text-muted-foreground text-sm mb-6">
+            Trusted by businesses across Egypt
+          </p>
+          <div className="flex justify-center items-center gap-12 flex-wrap">
+            <div className="w-24 h-12 bg-muted/50 rounded flex items-center justify-center text-muted-foreground text-xs">
+              Client 1
+            </div>
+            <div className="w-24 h-12 bg-muted/50 rounded flex items-center justify-center text-muted-foreground text-xs">
+              Client 2
+            </div>
+            <div className="w-24 h-12 bg-muted/50 rounded flex items-center justify-center text-muted-foreground text-xs">
+              Client 3
+            </div>
+            <div className="w-24 h-12 bg-muted/50 rounded flex items-center justify-center text-muted-foreground text-xs">
+              Client 4
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section-padding bg-primary">
         <div className="container-custom text-center">
@@ -194,9 +224,10 @@ const Home: React.FC = () => {
               </a>
             </Button>
             <Button variant="heroOutline" asChild>
-              <Link to="/contact">
-                {t('hero.cta.contact')}
-              </Link>
+              <a href="/catalog.pdf" download>
+                <Download className="w-5 h-5" />
+                {t('hero.cta.catalog')}
+              </a>
             </Button>
           </div>
         </div>
