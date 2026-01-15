@@ -15,7 +15,6 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.services': 'Services',
-    'nav.clients': 'Clients',
     'nav.contact': 'Contact',
     'nav.catalog': 'Download Catalog',
     
@@ -24,6 +23,8 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.subtitle': 'Transform your brand with high-quality CO2 laser cutting, engraving, and customized promotional items. Trusted by leading Egyptian companies for precision, speed, and reliability.',
     'hero.cta.whatsapp': 'Chat on WhatsApp',
     'hero.cta.contact': 'Request a Quote',
+    'hero.cta.catalog': 'Download Catalog',
+    'hero.cta.pricing': 'Request Pricing',
     
     // Features
     'features.precision.title': 'Precision Cutting',
@@ -52,17 +53,13 @@ const translations: Record<Language, Record<string, string>> = {
     'services.laser.title': 'CO2 Laser Cutting',
     'services.laser.desc': 'High-precision cutting for acrylic, wood, leather, fabric, and more. Perfect for signage, displays, and decorative elements.',
     'services.engraving.title': 'Laser Engraving',
-    'services.engraving.desc': 'Detailed engraving on various materials including metal, glass, and wood. Ideal for awards, plaques, and personalized gifts.',
+    'services.engraving.desc': 'Detailed engraving on various materials including glass, wood, and acrylic. Ideal for awards, plaques, and personalized gifts.',
     'services.custom.title': 'Custom Laser Products',
     'services.custom.desc': 'Bespoke products designed and manufactured to your exact specifications. From prototypes to production runs.',
     'services.promo.title': 'Promotional Items',
     'services.promo.desc': 'Branded merchandise, corporate gifts, and marketing materials that make your brand stand out.',
     'services.events.title': 'Event Products',
     'services.events.desc': 'Custom items for conferences, exhibitions, and corporate events. Backdrops, signage, and giveaways.',
-    
-    // Clients
-    'clients.title': 'Trusted by Leading Companies',
-    'clients.subtitle': 'We are proud to partner with some of Egypt\'s most respected businesses and organizations.',
     
     // Contact
     'contact.title': 'Get In Touch',
@@ -74,7 +71,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.submit': 'Send Message',
     'contact.whatsapp': 'Chat on WhatsApp',
     'contact.email': 'Email Us',
-    'contact.location': 'Cairo, Egypt',
+    'contact.location': '6 شارع 154، المعادى، القاهرة',
     
     // Footer
     'footer.tagline': 'Precision laser cutting and customized promotional products for Egyptian businesses.',
@@ -92,7 +89,6 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'الرئيسية',
     'nav.about': 'عن الشركة',
     'nav.services': 'خدماتنا',
-    'nav.clients': 'عملاؤنا',
     'nav.contact': 'اتصل بنا',
     'nav.catalog': 'تحميل الكتالوج',
     
@@ -101,6 +97,8 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.subtitle': 'حوّل علامتك التجارية مع خدمات القطع بالليزر CO2 عالية الجودة والنقش والمنتجات الدعائية المخصصة. موثوق به من قبل الشركات المصرية الرائدة.',
     'hero.cta.whatsapp': 'تواصل عبر واتساب',
     'hero.cta.contact': 'اطلب عرض سعر',
+    'hero.cta.catalog': 'تحميل الكتالوج',
+    'hero.cta.pricing': 'طلب الأسعار',
     
     // Features
     'features.precision.title': 'قطع دقيق',
@@ -129,17 +127,13 @@ const translations: Record<Language, Record<string, string>> = {
     'services.laser.title': 'القطع بليزر CO2',
     'services.laser.desc': 'قطع عالي الدقة للأكريليك والخشب والجلد والقماش والمزيد. مثالي للافتات والعروض والعناصر الزخرفية.',
     'services.engraving.title': 'النقش بالليزر',
-    'services.engraving.desc': 'نقش تفصيلي على مواد متنوعة بما في ذلك المعادن والزجاج والخشب. مثالي للجوائز واللوحات والهدايا الشخصية.',
+    'services.engraving.desc': 'نقش تفصيلي على مواد متنوعة بما في ذلك الزجاج والخشب والأكريليك. مثالي للجوائز واللوحات والهدايا الشخصية.',
     'services.custom.title': 'منتجات ليزر مخصصة',
     'services.custom.desc': 'منتجات مصممة ومصنعة حسب مواصفاتك الدقيقة. من النماذج الأولية إلى الإنتاج.',
     'services.promo.title': 'منتجات دعائية',
     'services.promo.desc': 'بضائع ذات علامة تجارية وهدايا للشركات ومواد تسويقية تجعل علامتك التجارية تتميز.',
     'services.events.title': 'منتجات الفعاليات',
     'services.events.desc': 'منتجات مخصصة للمؤتمرات والمعارض وفعاليات الشركات. خلفيات ولافتات وهدايا.',
-    
-    // Clients
-    'clients.title': 'موثوق به من قبل الشركات الرائدة',
-    'clients.subtitle': 'نحن فخورون بالشراكة مع بعض من أكثر الشركات والمؤسسات احتراماً في مصر.',
     
     // Contact
     'contact.title': 'تواصل معنا',
@@ -151,7 +145,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.submit': 'إرسال الرسالة',
     'contact.whatsapp': 'تواصل عبر واتساب',
     'contact.email': 'راسلنا عبر البريد',
-    'contact.location': 'القاهرة، مصر',
+    'contact.location': '6 شارع 154، المعادى، القاهرة',
     
     // Footer
     'footer.tagline': 'القطع الدقيق بالليزر والمنتجات الدعائية المخصصة للشركات المصرية.',

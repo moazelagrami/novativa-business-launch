@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Scissors, PenTool, Box, Gift, Calendar, MessageCircle, ArrowRight } from 'lucide-react';
+import { Scissors, PenTool, Box, Gift, Calendar, MessageCircle, ArrowRight, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import heroImage from '@/assets/hero-laser-cutting.jpg';
-import laserEngraving from '@/assets/laser-engraving.jpg';
-import promotionalProducts from '@/assets/promotional-products.jpg';
+
+// Product images
+import coasters from '@/assets/products/coasters.jpg';
+import giftBox from '@/assets/products/gift-box.jpg';
+import penHolder from '@/assets/products/pen-holder.jpg';
+import boxesMandala from '@/assets/products/boxes-mandala.jpg';
+import calendar from '@/assets/products/calendar.jpg';
 
 const Services: React.FC = () => {
   const { t } = useLanguage();
@@ -14,44 +18,42 @@ const Services: React.FC = () => {
   const services = [
     {
       icon: Scissors,
-      image: heroImage,
+      image: coasters,
       title: t('services.laser.title'),
       description: t('services.laser.desc'),
       features: ['Acrylic', 'Wood', 'Leather', 'Fabric', 'Paper'],
     },
     {
       icon: PenTool,
-      image: laserEngraving,
+      image: giftBox,
       title: t('services.engraving.title'),
       description: t('services.engraving.desc'),
-      features: ['Metal', 'Glass', 'Wood', 'Plastic', 'Stone'],
+      features: ['Glass', 'Wood', 'Acrylic', 'Leather', 'Stone'],
     },
     {
       icon: Box,
-      image: promotionalProducts,
+      image: penHolder,
       title: t('services.custom.title'),
       description: t('services.custom.desc'),
       features: ['Prototypes', 'Small Batches', 'Large Orders', 'Custom Designs'],
     },
     {
       icon: Gift,
-      image: promotionalProducts,
+      image: boxesMandala,
       title: t('services.promo.title'),
       description: t('services.promo.desc'),
       features: ['Corporate Gifts', 'Branded Items', 'Marketing Materials', 'Packaging'],
     },
     {
       icon: Calendar,
-      image: heroImage,
+      image: calendar,
       title: t('services.events.title'),
       description: t('services.events.desc'),
       features: ['Backdrops', 'Signage', 'Giveaways', 'Displays'],
     },
   ];
 
-  const whatsappNumber = '+201234567890';
-  const whatsappMessage = encodeURIComponent('Hello! I would like to inquire about your services.');
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappUrl = 'https://wa.me/201080221415?text=' + encodeURIComponent('Hello! I would like to inquire about your services.');
 
   return (
     <Layout>
@@ -144,10 +146,10 @@ const Services: React.FC = () => {
               </a>
             </Button>
             <Button variant="heroOutline" asChild>
-              <Link to="/contact">
-                {t('hero.cta.contact')}
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <a href="/catalog.pdf" download>
+                <Download className="w-5 h-5" />
+                {t('hero.cta.catalog')}
+              </a>
             </Button>
           </div>
         </div>

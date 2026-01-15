@@ -12,7 +12,6 @@ const Footer: React.FC = () => {
     { href: '/', label: t('nav.home') },
     { href: '/about', label: t('nav.about') },
     { href: '/services', label: t('nav.services') },
-    { href: '/clients', label: t('nav.clients') },
     { href: '/contact', label: t('nav.contact') },
   ];
 
@@ -82,14 +81,14 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
                 <Phone className="w-4 h-4 text-accent" />
-                <a href="tel:+201234567890" className="hover:text-accent transition-colors">
-                  +20 123 456 7890
+                <a href="tel:+201080221415" className="hover:text-accent transition-colors">
+                  01080221415
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
                 <Mail className="w-4 h-4 text-accent" />
-                <a href="mailto:info@novativa.eg" className="hover:text-accent transition-colors">
-                  info@novativa.eg
+                <a href="mailto:novativa.sales@gmail.com" className="hover:text-accent transition-colors">
+                  novativa.sales@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-primary-foreground/70">

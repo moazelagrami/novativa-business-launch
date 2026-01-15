@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageCircle, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { MessageCircle, Mail, MapPin, Phone, Send, Download, DollarSign, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -18,9 +18,9 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const whatsappNumber = '+201234567890';
-  const whatsappMessage = encodeURIComponent('Hello! I would like to inquire about your services.');
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappUrl = 'https://wa.me/201080221415?text=' + encodeURIComponent('Hello! I would like to inquire about your services.');
+  const whatsappPricingUrl = 'https://wa.me/201080221415?text=' + encodeURIComponent('Hello! I would like to request pricing for your laser cutting services.');
+  const whatsappCatalogUrl = 'https://wa.me/201080221415?text=' + encodeURIComponent('Hello! I would like to request your product catalog.');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -31,12 +31,12 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // Simulate form submission - in production, this would send to novativa.sales@gmail.com
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
+      description: "Thank you for contacting us. We'll get back to you soon at novativa.sales@gmail.com",
     });
 
     setFormData({ name: '', email: '', phone: '', message: '' });
@@ -46,21 +46,21 @@ const Contact: React.FC = () => {
   const contactInfo = [
     {
       icon: Phone,
-      label: 'Phone',
-      value: '+20 123 456 7890',
-      href: 'tel:+201234567890',
+      label: 'Phone / WhatsApp',
+      value: '01080221415',
+      href: 'tel:+201080221415',
     },
     {
       icon: Mail,
       label: 'Email',
-      value: 'info@novativa.eg',
-      href: 'mailto:info@novativa.eg',
+      value: 'novativa.sales@gmail.com',
+      href: 'mailto:novativa.sales@gmail.com',
     },
     {
       icon: MapPin,
       label: 'Location',
       value: t('contact.location'),
-      href: 'https://maps.google.com/?q=Cairo,Egypt',
+      href: 'https://maps.google.com/?q=6+شارع+154+المعادى+القاهرة',
     },
   ];
 
@@ -81,15 +81,44 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
+      {/* Quick Action Buttons */}
+      <section className="py-8 bg-accent/10">
+        <div className="container-custom">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button variant="whatsapp" size="lg" asChild>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5" />
+                {t('hero.cta.whatsapp')}
+              </a>
+            </Button>
+            <Button variant="accent" size="lg" asChild>
+              <a href={whatsappPricingUrl} target="_blank" rel="noopener noreferrer">
+                <DollarSign className="w-5 h-5" />
+                {t('hero.cta.pricing')}
+              </a>
+            </Button>
+            <Button variant="navyOutline" size="lg" asChild>
+              <a href="/catalog.pdf" download>
+                <Download className="w-5 h-5" />
+                {t('hero.cta.catalog')}
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-card rounded-2xl shadow-lg border border-border p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl font-bold text-foreground mb-2">
                 Send Us a Message
               </h2>
+              <p className="text-sm text-muted-foreground mb-6">
+                Your message will be sent to novativa.sales@gmail.com
+              </p>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -186,7 +215,7 @@ const Contact: React.FC = () => {
                     </a>
                   </Button>
                   <Button variant="heroOutline" size="lg" className="w-full" asChild>
-                    <a href="mailto:info@novativa.eg">
+                    <a href="mailto:novativa.sales@gmail.com">
                       <Mail className="w-5 h-5" />
                       {t('contact.email')}
                     </a>
