@@ -76,6 +76,9 @@ const Home: React.FC = () => {
             <h1 className="heading-display text-primary-foreground leading-tight">
               {t('hero.title')}
             </h1>
+            <p className="text-xl md:text-2xl text-accent font-semibold italic">
+              {t('hero.slogan')}
+            </p>
             <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed max-w-2xl">
               {t('hero.subtitle')}
             </p>
@@ -184,28 +187,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Trusted By Section - Minimal */}
-      <section className="py-12 bg-background border-y border-border">
-        <div className="container-custom">
-          <p className="text-center text-muted-foreground text-sm mb-6">
-            Trusted by businesses across Egypt
-          </p>
-          <div className="flex justify-center items-center gap-12 flex-wrap">
-            <div className="w-24 h-12 bg-muted/50 rounded flex items-center justify-center text-muted-foreground text-xs">
-              Client 1
-            </div>
-            <div className="w-24 h-12 bg-muted/50 rounded flex items-center justify-center text-muted-foreground text-xs">
-              Client 2
-            </div>
-            <div className="w-24 h-12 bg-muted/50 rounded flex items-center justify-center text-muted-foreground text-xs">
-              Client 3
-            </div>
-            <div className="w-24 h-12 bg-muted/50 rounded flex items-center justify-center text-muted-foreground text-xs">
-              Client 4
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-primary">

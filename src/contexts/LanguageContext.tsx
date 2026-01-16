@@ -20,6 +20,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     'hero.title': 'Precision Laser Cutting & Custom Promotional Products',
+    'hero.slogan': 'Your brand, our creativity',
     'hero.subtitle': 'Transform your brand with high-quality CO2 laser cutting, engraving, and customized promotional items. Trusted by leading Egyptian companies for precision, speed, and reliability.',
     'hero.cta.whatsapp': 'Chat on WhatsApp',
     'hero.cta.contact': 'Request a Quote',
@@ -94,6 +95,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     'hero.title': 'القطع بالليزر الدقيق والمنتجات الدعائية المخصصة',
+    'hero.slogan': 'علامتك التجارية، إبداعنا',
     'hero.subtitle': 'حوّل علامتك التجارية مع خدمات القطع بالليزر CO2 عالية الجودة والنقش والمنتجات الدعائية المخصصة. موثوق به من قبل الشركات المصرية الرائدة.',
     'hero.cta.whatsapp': 'تواصل عبر واتساب',
     'hero.cta.contact': 'اطلب عرض سعر',
