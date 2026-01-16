@@ -33,7 +33,8 @@ const Footer: React.FC = () => {
               <img 
                 src={novativaLogo} 
                 alt="Novativa" 
-                className="h-12 brightness-0 invert"
+                className="h-14"
+                style={{ filter: 'brightness(0) invert(1)' }}
               />
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">

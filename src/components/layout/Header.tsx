@@ -48,8 +48,8 @@ const Header: React.FC = () => {
               src={novativaLogo} 
               alt="Novativa - Laser Cutting & Engraving" 
               className={cn(
-                'transition-all duration-300',
-                isScrolled ? 'h-10' : 'h-12'
+                'transition-all duration-300 object-contain',
+                isScrolled ? 'h-12' : 'h-14'
               )}
             />
           </Link>

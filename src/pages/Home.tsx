@@ -9,6 +9,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import coasters from '@/assets/products/coasters.jpg';
 import giftBox from '@/assets/products/gift-box.jpg';
 import boxesMandala from '@/assets/products/boxes-mandala.jpg';
+import heroBackground from '@/assets/hero-laser-cutting.jpg';
 
 const Home: React.FC = () => {
   const { t } = useLanguage();
@@ -65,9 +66,9 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${coasters})` }}
+            style={{ backgroundImage: `url(${heroBackground})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/50" />
         </div>
 
         {/* Content */}
