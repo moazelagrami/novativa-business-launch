@@ -5,12 +5,25 @@ import { Button } from '@/components/ui/button';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-// Product images
-import coasters from '@/assets/products/coasters.jpg';
-import giftBox from '@/assets/products/gift-box.jpg';
-import penHolder from '@/assets/products/pen-holder.jpg';
-import boxesMandala from '@/assets/products/boxes-mandala.jpg';
-import calendar from '@/assets/products/calendar.jpg';
+// Product images - Laser Cutting
+import medicalModels from '@/assets/products/medical-models.jpg';
+import deskOrganizer from '@/assets/products/desk-organizer.jpg';
+
+// Product images - Engraving
+import doctorOfficeSet from '@/assets/products/doctor-office-set.jpg';
+import dodecaCalendar from '@/assets/products/dodeca-calendar.jpg';
+
+// Product images - Custom Products
+import qrDisplay from '@/assets/products/qr-display.jpg';
+import phoneStandsBranded from '@/assets/products/phone-stands-branded.jpg';
+
+// Product images - Promotional
+import brandedKeychains from '@/assets/products/branded-keychains.jpg';
+import calendarCube from '@/assets/products/calendar-cube.jpg';
+
+// Product images - Events
+import weddingFavors from '@/assets/products/wedding-favors.jpg';
+import calendarFrame from '@/assets/products/calendar-frame.jpg';
 
 const Services: React.FC = () => {
   const { t } = useLanguage();
@@ -18,42 +31,42 @@ const Services: React.FC = () => {
   const services = [
     {
       icon: Scissors,
-      image: coasters,
+      images: [medicalModels, deskOrganizer],
       title: t('services.laser.title'),
       description: t('services.laser.desc'),
       features: ['Acrylic', 'Wood', 'Leather', 'Fabric', 'Paper'],
     },
     {
       icon: PenTool,
-      image: giftBox,
+      images: [doctorOfficeSet, dodecaCalendar],
       title: t('services.engraving.title'),
       description: t('services.engraving.desc'),
       features: ['Glass', 'Wood', 'Acrylic', 'Leather', 'Stone'],
     },
     {
       icon: Box,
-      image: penHolder,
+      images: [qrDisplay, phoneStandsBranded],
       title: t('services.custom.title'),
       description: t('services.custom.desc'),
       features: ['Prototypes', 'Small Batches', 'Large Orders', 'Custom Designs'],
     },
     {
       icon: Gift,
-      image: boxesMandala,
+      images: [brandedKeychains, calendarCube],
       title: t('services.promo.title'),
       description: t('services.promo.desc'),
       features: ['Corporate Gifts', 'Branded Items', 'Marketing Materials', 'Packaging'],
     },
     {
       icon: Calendar,
-      image: calendar,
+      images: [weddingFavors, calendarFrame],
       title: t('services.events.title'),
       description: t('services.events.desc'),
       features: ['Backdrops', 'Signage', 'Giveaways', 'Displays'],
     },
   ];
 
-  const whatsappUrl = 'https://wa.me/201080221415?text=' + encodeURIComponent('Hello! I would like to inquire about your services.');
+  const whatsappUrl = 'https://wa.me/201080221415?text=' + encodeURIComponent('مرحباً! أود الاستفسار عن خدمات القطع بالليزر. Hello! I would like to inquire about your services.');
 
   return (
     <Layout>
@@ -75,7 +88,7 @@ const Services: React.FC = () => {
       {/* Services Grid */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="space-y-16">
+          <div className="space-y-24">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -83,15 +96,22 @@ const Services: React.FC = () => {
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}
               >
-                {/* Image */}
+                {/* Images Grid */}
                 <div className={`order-1 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full aspect-video object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
+                  <div className="grid grid-cols-2 gap-4">
+                    {service.images.map((image, imgIndex) => (
+                      <div 
+                        key={imgIndex}
+                        className="relative rounded-2xl overflow-hidden shadow-xl bg-secondary/20 aspect-square flex items-center justify-center p-4"
+                      >
+                        <img
+                          src={image}
+                          alt={`${service.title} example ${imgIndex + 1}`}
+                          className="w-full h-full object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
 
