@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -28,20 +29,36 @@ const Contact: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission - in production, this would send to novativa.sales@gmail.com
-    await new Promise(resolve => setTimeout(resolve, 1000));
+  try {
+    await emailjs.send(
+      'service_yzzc5fo',
+      'template_fjfqgdv',{
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,},
+        'EGechXLgjWPdiZhkX'
+    );
 
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon at novativa.sales@gmail.com",
+      description: "Your message was sent successfully.",
     });
 
     setFormData({ name: '', email: '', phone: '', message: '' });
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: "Failed to send message.",
+      variant: "destructive",
+    });
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
 
   const contactInfo = [
     {
@@ -89,12 +106,6 @@ const Contact: React.FC = () => {
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5" />
                 {t('hero.cta.whatsapp')}
-              </a>
-            </Button>
-            <Button variant="accent" size="lg" asChild>
-              <a href={whatsappPricingUrl} target="_blank" rel="noopener noreferrer">
-                <DollarSign className="w-5 h-5" />
-                {t('hero.cta.pricing')}
               </a>
             </Button>
             <Button variant="navyOutline" size="lg" asChild>

@@ -4,7 +4,7 @@ import { Menu, X, Download, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import novativaLogo from '@/assets/novativa-logo.png';
+import novativaLogo from '@/assets/logo_final.png';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);

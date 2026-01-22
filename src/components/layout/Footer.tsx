@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import novativaLogo from '@/assets/novativa-logo.png';
+import novativaLogo from '@/assets/logo_final.png';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();

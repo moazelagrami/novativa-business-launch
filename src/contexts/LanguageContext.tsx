@@ -25,7 +25,6 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.cta.whatsapp': 'Chat on WhatsApp',
     'hero.cta.contact': 'Request a Quote',
     'hero.cta.catalog': 'Download Catalog',
-    'hero.cta.pricing': 'Request Pricing',
     
     // Features
     'features.precision.title': 'Precision Cutting',
