@@ -91,12 +91,6 @@ const Home: React.FC = () => {
                 </a>
               </Button>
               <Button variant="heroOutline" asChild>
-                <a href={whatsappPricingUrl} target="_blank" rel="noopener noreferrer">
-                  {t('hero.cta.pricing')}
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-              </Button>
-              <Button variant="heroOutline" asChild>
                 <a href="/catalog.pdf" download>
                   <Download className="w-5 h-5" />
                   {t('hero.cta.catalog')}
